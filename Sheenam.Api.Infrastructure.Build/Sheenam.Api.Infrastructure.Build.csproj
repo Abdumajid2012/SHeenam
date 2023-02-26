@@ -9,6 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="ADotNet" Version="2.0.5" />
+    <PackageReference Include="FluentAssertions" Version="6.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sheenam.Api\Sheenam.Api.csproj" />
   </ItemGroup>
 
 </Project>
