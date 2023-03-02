@@ -5,13 +5,13 @@
 
 using Xeptions;
 
-namespace Sheenam.Api.Services.Foundations.Guests.Exceptions
+namespace Sheenam.Api.Models.Foundations.Guests.Exceptions
 {
     public class GuestValidationException : Xeption
     {
         public GuestValidationException(Xeption innerException)
-            :base(message: "Guest validation error occored, fix the errors and try agein.",
-                 innerException)    
+            : base(message: "Guest validation error occored, fix the errors and try agein.",
+                 innerException)
         { }
     }
 }
