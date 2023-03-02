@@ -23,8 +23,6 @@ namespace Sheenam.Api.Services.Foundations.Guests
             this.loggingBroker = loggingBroker;
         }
 
-        // Exception Noise Cancellation => Xatoliklar Shovqinini Bartaraf Etish
-
         public ValueTask<Guest> AddGuestAsync(Guest guest) =>
             TryCatch(async () =>
             {
