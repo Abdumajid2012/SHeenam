@@ -46,7 +46,7 @@ namespace Sheenam.Api.Services.Foundations.Guests
                 var alreadyExistGuestException =
                     new AlreadyExistGuestException(dublicateKeyException);
 
-                throw CreateAndLogCriticalDependenceValidationException(alreadyExistGuestException);
+                throw CreateAndDependenceValidationException(alreadyExistGuestException);
             }
         }
 
@@ -68,7 +68,8 @@ namespace Sheenam.Api.Services.Foundations.Guests
             return guestDependencyException;
         }
 
-        private GuestDependencyValidationException CreateAndLogCriticalDependenceValidationException(Xeption exception)
+        private GuestDependencyValidationException CreateAndDependenceValidationException(
+            Xeption exception)
         {
             var guestDependencyValidationException = 
                 new GuestDependencyValidationException(exception);
