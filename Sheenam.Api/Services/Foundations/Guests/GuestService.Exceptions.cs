@@ -23,17 +23,14 @@ namespace Sheenam.Api.Services.Foundations.Guests
             {
                 return await returningGuestFunction();
             }
-
             catch (NullGuestException nullGuestException)
             {
                 throw CreateAndLogValidationException(nullGuestException);
             }
-
             catch(InvalidGuestException invalidGuestException)
             {
                 throw CreateAndLogValidationException(invalidGuestException);
             }
-
             catch(SqlException sqlException)
             {
                 var failedGuestStorageException = 
@@ -41,7 +38,6 @@ namespace Sheenam.Api.Services.Foundations.Guests
 
                 throw CreateAndLogCriticalDependenceException(failedGuestStorageException);
             }
-
             catch(DuplicateKeyException dublicateKeyException)
             {
                 var alreadyExistGuestException =
@@ -49,7 +45,6 @@ namespace Sheenam.Api.Services.Foundations.Guests
 
                 throw CreateAndDependenceValidationException(alreadyExistGuestException);
             }
-
             catch(Exception exception)
             {
                 var failedGuestServiceException =
