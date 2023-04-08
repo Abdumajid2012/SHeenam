@@ -7,7 +7,6 @@ using Moq;
 using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Models.Foundations.Guests.Exceptions;
 using Xunit;
-using Xunit.Sdk;
 
 namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
 {
@@ -36,7 +35,7 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
                     Times.Once);
 
             this.storageBrokerMock.Verify(broker =>
-                broker.InsertGuestAsync(It.IsAny<Guest>()), 
+                broker.InsertGuestAsync(It.IsAny<Guest>()),
                     Times.Never);
 
             this.loggingBrokerMock.VerifyNoOtherCalls();
@@ -127,7 +126,7 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
                 this.guestService.AddGuestAsync(invalidGuest);
 
             // then
-            await Assert.ThrowsAsync<GuestValidationException>(()=>
+            await Assert.ThrowsAsync<GuestValidationException>(() =>
                 addGuestTask.AsTask());
 
             this.loggingBrokerMock.Verify(broker =>
